@@ -21,7 +21,7 @@ import './index.css'
 const container = document.querySelector('#root');
 const root = createRoot(container);
 
-root.render(<FirstApp saludo='RUSSELL AI' subtitles={123} />);
+root.render(<FirstApp saludo='RUSSELL AI'  />);
 //root.render(<CounterApp value={100} />);
 
 //ANTES

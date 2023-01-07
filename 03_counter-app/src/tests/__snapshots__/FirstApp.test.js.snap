@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en FirstApp Deberia mostrar <FirstApp/> correctamente 1`] = `
+<Fragment>
+  <h1>
+    RUSSELL AI
+  </h1>
+  <h1>
+    template subtitulo
+  </h1>
+</Fragment>
+`;
