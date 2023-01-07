@@ -21,9 +21,10 @@ import './index.css'
 const container = document.querySelector('#root');
 const root = createRoot(container);
 
-//root.render(<FirstApp saludo='atributo saludus' subtitles={123} />);
-root.render(<CounterApp value={100} />);
+root.render(<FirstApp saludo='RUSSELL AI' subtitles={123} />);
+//root.render(<CounterApp value={100} />);
 
+//ANTES
 //ReactDOM.render(<FirstApp />,divRoot); react v17
 
 

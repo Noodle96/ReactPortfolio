@@ -10,8 +10,8 @@ const FirstApp = ({saludo, subtitles}) => {
     }
     const heigh = 34.677;
 
-    console.log(saludo);
-    console.log(subtitles);
+    // console.log(saludo);
+    // console.log(subtitles);
 
     // if(!saludo){
     //     throw new Error('el saludo es necesario');
@@ -22,10 +22,10 @@ const FirstApp = ({saludo, subtitles}) => {
         <Fragment>
             <h1>{saludo}</h1>
             <h1>{subtitles}</h1>
-            <h1>Hello world with functional components</h1>
+            {/* <h1>Hello world with functional components</h1>
             <p> the card is: {card} </p>
             <pre> {JSON.stringify(student,null,4)}</pre>
-            <h1>{heigh}</h1>
+            <h1>{heigh}</h1> */}
         </Fragment>
     );
 }
