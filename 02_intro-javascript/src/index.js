@@ -280,7 +280,7 @@ const getHeroeByIdAsync = (id) => {
 
 //FETCH
 // const apiKey = "T7s9dmoxXTBiSi4c6Eh4ZHV6siNEBCpQ";
-// const peticion  =  fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
+//const peticion  =  fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
 
 // peticion.then( (resp) => {
     // //console.log(resp)
@@ -295,7 +295,7 @@ const getHeroeByIdAsync = (id) => {
 peticion
     .then( (resp) => resp.json())
     .then(({data}) => {
-        //console.log(data.images.original.url); /abc
+        //console.log(data.images.original.url); //abc
         const {url} = data.images.original; //abc
         const img = document.createElement('img');
         img.src = url;

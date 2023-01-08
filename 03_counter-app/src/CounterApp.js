@@ -26,7 +26,7 @@ const CounterApp = ({value}) => {
     return (
         <Fragment>
             <h1>CounterApp</h1>
-            <h2> { counter } </h2>
+            <h2 id='counterInicial'> {counter} </h2>
             <button onClick={ (e) => {handleAdd(e)}}> +1 </button>
             <button onClick={ (e) => {handleReset(e)}}> Reset </button>
             <button onClick={ (e) => {handleSubstract(e)}}> -1 </button>
