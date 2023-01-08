@@ -21,7 +21,7 @@ const FirstApp = ({saludo, subtitles}) => {
     return (
         <Fragment>
             <h1>{saludo}</h1>
-            <h1>{subtitles}</h1>
+            <h1 id='subtitle'>{subtitles}</h1>
             {/* <h1>Hello world with functional components</h1>
             <p> the card is: {card} </p>
             <pre> {JSON.stringify(student,null,4)}</pre>

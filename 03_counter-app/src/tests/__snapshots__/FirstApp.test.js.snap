@@ -5,7 +5,9 @@ exports[`Pruebas en FirstApp Deberia mostrar <FirstApp/> correctamente 1`] = `
   <h1>
     RUSSELL AI
   </h1>
-  <h1>
+  <h1
+    id="subtitle"
+  >
     template subtitulo
   </h1>
 </Fragment>
