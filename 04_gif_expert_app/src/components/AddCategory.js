@@ -1,12 +1,18 @@
 //rafc
-import React, { form, useState } from 'react'
+import React, { form, useState } from 'react';
+import PropTypes from 'prop-types';
 
-export const AddCategory = () => {
-    const [inputValue, setInputValue] = useState('card');
+
+export const AddCategory = ({setCategories}) => {
+    const [inputValue, setInputValue] = useState('');
     const handleInputChange = (e) => {setInputValue(e.target.value)}
     const handleSubmit = (e) =>  {
         e.preventDefault();
         console.log('hecho submit');
+        if(inputValue.trim().length > 1){
+            setCategories((cats) => [...cats, inputValue]);
+            setInputValue('');
+        }
     }
     return (
         <form onSubmit={ (e) => handleSubmit(e)}>
@@ -18,4 +24,7 @@ export const AddCategory = () => {
             />
         </form>
     );
+}
+AddCategory.propTypes = {
+    setCategories: PropTypes.func.isRequired
 }

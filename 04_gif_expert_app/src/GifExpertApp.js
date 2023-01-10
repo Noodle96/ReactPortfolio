@@ -11,7 +11,7 @@ export const GifExpertApp = () => {
     return (
         <Fragment>
             <h2>GiftExpertApp</h2>
-            <AddCategory />
+            <AddCategory setCategories={setCategories}/>
             <hr />
             {/* <button onClick={(e) => {handleAdd(e)}}>Add Category</button> */}
             <ol>
