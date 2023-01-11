@@ -1,5 +1,5 @@
 //rafc
-import React, { form, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -8,7 +8,7 @@ export const AddCategory = ({setCategories}) => {
     const handleInputChange = (e) => {setInputValue(e.target.value)}
     const handleSubmit = (e) =>  {
         e.preventDefault();
-        console.log('hecho submit');
+        // console.log('hecho submit');
         if(inputValue.trim().length > 1){
             setCategories((cats) => [...cats, inputValue]);
             setInputValue('');

@@ -1,13 +1,11 @@
 import { Fragment, useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 //FUNCTIONAL COMPONENT
 export const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['common','rare','legendary']);
-    // const handleAdd = () => {
-    //     // setCategories([...categories, 'newRare']);
-    //     setCategories(cats => [...cats,'legends']);
-    // }
+    const [categories, setCategories] = useState(['common']);
+  
     return (
         <Fragment>
             <h2>GiftExpertApp</h2>
@@ -16,9 +14,13 @@ export const GifExpertApp = () => {
             {/* <button onClick={(e) => {handleAdd(e)}}>Add Category</button> */}
             <ol>
                 {
-                    categories.map(category => {
-                        return <li key={category}>{category}</li>
-                    })
+                    categories.map( category => (
+                         <GifGrid 
+                            key={category}
+                            category={category}
+                         />
+                    ))
+                    
                 }
             </ol>
         </Fragment>
