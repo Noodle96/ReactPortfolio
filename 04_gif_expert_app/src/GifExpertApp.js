@@ -4,7 +4,7 @@ import { GifGrid } from "./components/GifGrid";
 
 //FUNCTIONAL COMPONENT
 export const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['common']);
+    const [categories, setCategories] = useState(['messi']);
   
     return (
         <Fragment>
