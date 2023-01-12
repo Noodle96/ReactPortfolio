@@ -22,7 +22,7 @@ export const GifExpertApp = () => {
                     ))
                     
                 }
-            </ol>
+            </ol>     
         </Fragment>
     );
 };
