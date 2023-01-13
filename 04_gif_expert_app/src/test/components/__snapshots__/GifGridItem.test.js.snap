@@ -4,7 +4,12 @@ exports[`Pruebas en GifGridItem Debería de mostrar <GifGridItem /> correctament
 <div
   className="card animate__animated animate__bounce"
 >
-  <img />
-  <p />
+  <img
+    alt="template_title"
+    src="https: //template.url"
+  />
+  <p>
+    template_title
+  </p>
 </div>
 `;
