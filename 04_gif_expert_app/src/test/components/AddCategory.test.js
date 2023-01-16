@@ -33,4 +33,22 @@ describe('Pruebas en el componente <AddCategory />', () => {
         wrapper.find('form').simulate('submit',{preventDefault(){}});
         expect(setCategories).not.toHaveBeenCalled();
     });
+    test('Deberia de llamarse el setcategories y limpiar la caja de text', () => {
+        const input = wrapper.find('input');
+        const value = 'pii';
+
+        //SIMULAR EL INPUTCHANGE
+        input.simulate('change',{target:{value}});
+        expect(wrapper.find('p').text().trim()).toBe(value);
+
+        //SIMULAR EL SUBMIT
+        wrapper.find('form').simulate('submit',{preventDefault(){}});
+        // expect(setCategories).toHaveBeenCalled();
+        // expect(setCategories).toHaveBeenCalledTimes(1); //the same
+        expect(setCategories).toHaveBeenCalledWith(expect.any(Function));
+
+        // console.log(wrapper.find('p').text().trim());
+        //verificando que la caja de texto sea ''
+        expect(wrapper.find('p').text().trim()).toBe('');
+    });
 });
