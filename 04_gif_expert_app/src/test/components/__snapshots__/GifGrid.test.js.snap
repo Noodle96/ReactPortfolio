@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente GifGrid El componente <GifGrid /> deberia de mostrarse correctamente 1`] = `
+<Fragment>
+  <h3
+    className="card animate__animated animate__backInDown"
+  >
+    template category
+  </h3>
+  <p>
+    Loading...
+  </p>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;
