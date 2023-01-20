@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Pruebas en el componente GifGrid Debe de mostrar las imagenes retornadas de la funcion useFetchGifs 1`] = `
+<Fragment>
+  <h3
+    className="card animate__animated animate__backInDown"
+  >
+    template category
+  </h3>
+  <div
+    className="card-grid"
+  >
+    <GifGridItem
+      id="template_id"
+      key="template_id"
+      title="template_title"
+      type="template_type"
+      url="https://templateURL.jpg"
+      username="template_username "
+    />
+  </div>
+</Fragment>
+`;
+
 exports[`Pruebas en el componente GifGrid El componente <GifGrid /> deberia de mostrarse correctamente 1`] = `
 <Fragment>
   <h3
