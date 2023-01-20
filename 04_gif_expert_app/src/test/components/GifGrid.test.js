@@ -14,7 +14,6 @@ describe('Pruebas en el componente GifGrid', () => {
     let wrapper = shallow(<GifGrid category={category}/>);
 
     beforeEach(() => {
-        console.log('hello since beforeEach');
         jest.clearAllMocks();
         useFetchGifs.mockReturnValue({
             data: [],
@@ -28,7 +27,6 @@ describe('Pruebas en el componente GifGrid', () => {
     });
 
     test('Debe de mostrar las imagenes retornadas de la funcion useFetchGifs',()=>{
-        console.log('hello since second test');
         const gifs = [{
             id: 'template_id',
             title: 'template_title',
@@ -42,5 +40,7 @@ describe('Pruebas en el componente GifGrid', () => {
         });
         wrapper = shallow(<GifGrid category={category}/>);
         expect(wrapper).toMatchSnapshot();
+        expect(wrapper.find('p').exists()).toBe(false);
+        expect(wrapper.find('GifGridItem').length).toBe(gifs.length);
     });
 });
