@@ -3,8 +3,8 @@ import { AddCategory } from "./components/AddCategory";
 import { GifGrid } from "./components/GifGrid";
 
 //FUNCTIONAL COMPONENT
-export const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['messi']);
+export const GifExpertApp = ({defaultCategories = []}) => {
+    const [categories, setCategories] = useState(defaultCategories);
   
     return (
         <Fragment>
