@@ -1,1 +1,5 @@
-# React
+![no-yellow-team](badges/no-yellow-team-cs.svg)
+![certified-by-russell](badges/certified-by-russell.svg)
+![powered-by-russell](badges/powered-by-russell.svg)
+![check-it-out](badges/check-it-out.svg)
+![vite](badges/compiled-with-vite.svg)
