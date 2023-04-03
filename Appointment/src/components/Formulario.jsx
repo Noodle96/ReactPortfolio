@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const Formulario = () => {
+const Formulario = ({pacientes, setPacientes}) => {
     const [mascota, setMascota] = useState('');
     const [propietario, setPropietatio] = useState('');
     const [email, setEmail] = useState('');
@@ -16,6 +16,21 @@ const Formulario = () => {
             return;
         }
         setError(false);
+        //Creando el objeto del Paciente
+        const objetoPaciente = {
+            mascota,
+            propietario,
+            email,
+            fecha,
+            sintomas
+        }
+        setPacientes([...pacientes, objetoPaciente]);
+        //Reinicar el objeto
+        setMascota('');
+        setPropietatio('');
+        setEmail('');
+        setFecha('');
+        setSintomas('');
     }
 
     return (
