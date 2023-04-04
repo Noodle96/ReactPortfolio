@@ -13,6 +13,7 @@ function App() {
                     pacientes = {pacientes}
                     setPacientes = {setPacientes}
                     pacienteToEdit = {pacienteToEdit}
+                    setPacienteToEdit =  {setPacienteToEdit}
                     
                 />
                 <ListadoPacientes

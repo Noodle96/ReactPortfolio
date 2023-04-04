@@ -36,7 +36,7 @@ const Paciente = ({paciente,setPacienteToEdit}) => {
                 </button>
                 <button
                     type="button"
-                    className=' bg-red-600 hover:bg-red-700 py-2 px-10 uppercase text-white font-bold rounded-lg'
+                    className=' bg-red-500 hover:bg-red-600 py-2 px-10 uppercase text-white font-bold rounded-lg'
                 >
                     Eliminar
                 </button>

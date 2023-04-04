@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Error from './Error';
 
-const Formulario = ({pacientes, setPacientes,pacienteToEdit}) => {
+const Formulario = ({pacientes, setPacientes,pacienteToEdit, setPacienteToEdit}) => {
     const [mascota, setMascota] = useState('');
     const [propietario, setPropietatio] = useState('');
     const [email, setEmail] = useState('');
@@ -42,9 +42,23 @@ const Formulario = ({pacientes, setPacientes,pacienteToEdit}) => {
             email,
             fecha,
             sintomas,
-            id: generarId()
         }
-        setPacientes([...pacientes, objetoPaciente]);
+
+        //verificando si es edicion o nuevo registro
+        if(pacienteToEdit.id){
+            //MODO EDICION
+            objetoPaciente.id = pacienteToEdit.id;
+            // console.log(objetoPaciente);
+            // console.log(pacienteToEdit);
+            const pacientesActualizados = pacientes.map(pacienteTemp => pacienteTemp.id === pacienteToEdit.id ? objetoPaciente : pacienteTemp);
+            setPacientes(pacientesActualizados);
+            setPacienteToEdit({});
+        }
+        else{
+            //MODO NUEVO REGISTRO
+            objetoPaciente.id = generarId();
+            setPacientes([...pacientes, objetoPaciente]);
+        }
         //Reinicar el objeto
         setMascota('');
         setPropietatio('');
@@ -135,7 +149,7 @@ const Formulario = ({pacientes, setPacientes,pacienteToEdit}) => {
                 </div>{/* END ROW */}
                 <input
                     type="submit"
-                    value="Agregar Paciente"
+                    value={pacienteToEdit.id ? 'Editar Paciente' : 'Agregar Paciente'}
                     className=' bg-indigo-600 w-full p-3 text-white uppercase
                                 hover:bg-indigo-700 font-bold cursor-pointer transition-all'
                 />
