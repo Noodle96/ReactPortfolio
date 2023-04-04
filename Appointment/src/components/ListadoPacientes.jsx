@@ -1,7 +1,7 @@
 import React from 'react'
 import Paciente from './Paciente'
 
-const ListadoPacientes = ({pacientes}) => {
+const ListadoPacientes = ({pacientes,setPacienteToEdit}) => {
     
   return (
     <div className=' md:w-1/2 lg:w-3/5 md:h-screen md:overflow-y-scroll'>
@@ -17,7 +17,9 @@ const ListadoPacientes = ({pacientes}) => {
                 {
                     pacientes.map(paciente => (
                         <Paciente
+                            key={paciente.id}
                             paciente = {paciente}
+                            setPacienteToEdit={setPacienteToEdit}
                         />
                     ))
                 }
