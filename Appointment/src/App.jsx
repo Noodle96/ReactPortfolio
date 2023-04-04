@@ -3,10 +3,22 @@ import Header from "./components/Header";
 import Formulario from "./components/Formulario";
 import ListadoPacientes from "./components/ListadoPacientes";
 function App() {
-    const [pacientes, setPacientes] = useState([]);
+    const [pacientes, setPacientes] = useState(JSON.parse(localStorage.getItem('pacientes')) || []);
     const [pacienteToEdit, setPacienteToEdit] = useState({});
 
+    // useEffect(() => {
+    //     const obtenerLS = () =>{
+    //         const pacientesLS = JSON.parse(localStorage.getItem('pacientes')) || [];
+    //         setPacientes(pacientesLS);
+    //     }
+    //     obtenerLS();
+    
+    // }, []) // Only once
+    
     useEffect(() => {
+        // const setearPacientesToLS = () => {
+        // }
+        // setearPacientesToLS();
         localStorage.setItem('pacientes', JSON.stringify(pacientes));
     }, [pacientes])
     
