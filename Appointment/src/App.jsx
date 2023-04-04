@@ -5,6 +5,15 @@ import ListadoPacientes from "./components/ListadoPacientes";
 function App() {
     const [pacientes, setPacientes] = useState([]);
     const [pacienteToEdit, setPacienteToEdit] = useState({});
+
+    const eliminarPaciente = (id) => {
+        const pacientesActualizados = pacientes.filter( pacienteTemp => pacienteTemp.id !== id);
+        setPacientes(pacientesActualizados);
+        // console.log(pacientesActualizados);
+        // console.log(pacientes);
+    }
+;
+
     return (
         <div className="container mx-auto mt-20">
             <Header />
@@ -19,6 +28,7 @@ function App() {
                 <ListadoPacientes
                     pacientes = {pacientes}
                     setPacienteToEdit = {setPacienteToEdit}
+                    eliminarPaciente = {eliminarPaciente}
                 />
             </div>
 
