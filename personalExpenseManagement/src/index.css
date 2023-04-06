@@ -142,8 +142,8 @@ header h1 {
 }
 .alerta.error {
     background-color: var(--blanco);
-    border-left: 5px solid #b91c1c;
-    color: #b91c1c;
+    border-left: 5px solid #ec3838;
+    color: #ec3838;
 }
 .alerta.success {
 }
