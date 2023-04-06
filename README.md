@@ -8,7 +8,7 @@
 
 - [Manage Vet](#manage-vet)
 
-# Snake Game
+# Manage Vet
 [(Back to top)](#table-of-contents)
 
 - [Link Manage Vet](https://vet-manage.netlify.app/)
