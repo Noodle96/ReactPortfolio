@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import cerrarBtn from './../img/cerrar.svg';
 const Modal = ({setModal, animarModal, setAnimarModal}) => {
+
+    const [nameGasto, setNameGasto] = useState('');
+    const [cantidad, setCantidad] = useState(0);
+    const [categoria , setCategoria] = useState('');
 
     const ocultarModal = () => {
         setAnimarModal(false);
@@ -8,7 +12,6 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
             setModal(false);
         }, 500);
     }
-
     return (
         <div className='modal'>
             <div className="cerrar-modal">
@@ -28,6 +31,8 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
                         id='nombreGasto'
                         type="text"
                         placeholder='Add expense Name'
+                        value={nameGasto}
+                        onChange = { e => setNameGasto(e.target.value)}
                     />
                 </div>
                 <div className="campo">
@@ -36,6 +41,8 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
                         id='cantidad'
                         type="number"
                         placeholder='Add expense amount'
+                        value = {cantidad}
+                        onChange = { e => setCantidad(Number(e.target.value))}
                     />
                 </div>
                 <div className="campo">
@@ -43,6 +50,8 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
                     <select
                         name=""
                         id="categoria"
+                        value = {categoria}
+                        onChange = { e => setCategoria(e.target.value)}
                     >
                         <option value="">-- Select --</option>
                         <option value="ahorro">Saving</option>
