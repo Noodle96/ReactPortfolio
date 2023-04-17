@@ -23,6 +23,7 @@ const Modal = ({setModal, animarModal, setAnimarModal,guardarGasto}) => {
             return;
         }
         guardarGasto({nameGasto, cantidad, categoria});
+        ocultarModal();
     }
     return (
         <div className='modal'>
