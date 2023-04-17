@@ -21,6 +21,7 @@ function App() {
     }
     const guardarGasto = (objGasto) => {
         objGasto.id = generarId();
+        objGasto.fecha = Date.now();
         setGastos([...gastos, objGasto]);
     }
     return (
