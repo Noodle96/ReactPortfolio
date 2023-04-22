@@ -1,6 +1,11 @@
+import styled from '@emotion/styled';
+const Heading = styled.h1`
+    font-family: 'lato', sans-serif;
+    color: #FFF;
+`;
 function App() {
     return (
-        <h1>Desde App</h1>
+        <Heading>Desde App</Heading>
     )
 }
 
