@@ -19,15 +19,18 @@ const InputSubmit = styled.input`
     }
 `
 const Formulario = () => {
-    const [archivo, setArchivo] = useSelectMonedas("a.out");
-    console.log("Desde form. ");
-    console.log(archivo);
-    setArchivo("monos.txt");
-    console.log(archivo);
+    const [ SelectMonedas ] = useSelectMonedas('Elige tu moneda');
+    const [SelectCriptomoneda] = useSelectMonedas('Elige tu criptomoneda');
 
     return (
-        <form> 
-            <InputSubmit type="submit" value="Cotizar"/>
+        <form>
+            <SelectMonedas />
+            <SelectCriptomoneda />
+
+            <InputSubmit
+                type="submit"
+                value="Cotizar"
+            />
         </form>
     )
 }

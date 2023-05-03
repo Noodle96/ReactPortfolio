@@ -1,13 +1,17 @@
 import React from 'react'
+import styled from '@emotion/styled';
 
-const useSelectMonedas = () => {
-    let archivo = "test.txt";
-    const setArchivo = (nameArchivo) => {
-        archivo = nameArchivo;
-    }
-    console.log("desde useSelect: ");
-    console.log(archivo);
-    return [archivo, setArchivo];
+const Label = styled.label`
+    color: #FFF;
+`;
+
+const useSelectMonedas = (label) => {
+    const SelectMonedas = () => (
+        <>
+            <Label>{label}</Label>
+        </>
+    )
+    return [SelectMonedas];
 }
 
 export default useSelectMonedas
