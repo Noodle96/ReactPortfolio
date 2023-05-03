@@ -1,4 +1,5 @@
 import React from 'react'
+import useSelectMonedas from '../hooks/useSelectMonedas'
 import styled from '@emotion/styled'
 
 const InputSubmit = styled.input`
@@ -18,6 +19,12 @@ const InputSubmit = styled.input`
     }
 `
 const Formulario = () => {
+    const [archivo, setArchivo] = useSelectMonedas("a.out");
+    console.log("Desde form. ");
+    console.log(archivo);
+    setArchivo("monos.txt");
+    console.log(archivo);
+
     return (
         <form> 
             <InputSubmit type="submit" value="Cotizar"/>
