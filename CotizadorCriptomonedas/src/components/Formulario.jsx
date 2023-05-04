@@ -1,7 +1,8 @@
-import {useEffect, useState} from 'react'
+import {Fragment, useEffect, useState} from 'react'
 import useSelectMonedas from '../hooks/useSelectMonedas'
 import {monedas} from '../data/monedas';
 import styled from '@emotion/styled'
+import Error from './Error';
 
 const InputSubmit = styled.input`
     background-color: #9497FF;
@@ -22,9 +23,10 @@ const InputSubmit = styled.input`
 `
 const Formulario = () => {
     const [criptos, setCriptos] = useState([]);
+    const [error, setError] = useState(false);
 
     const [ moneda, SelectMonedas ] = useSelectMonedas('Elige tu moneda', monedas);
-    const [ criptoMonesas, SelectCriptMonedas ] = useSelectMonedas('Elige tu criptomoneda', criptos);
+    const [ criptoMonedas, SelectCriptMonedas ] = useSelectMonedas('Elige tu criptomoneda', criptos);
 
     useEffect(() => {
         const consultarAPI = async () => {
@@ -44,15 +46,35 @@ const Formulario = () => {
         consultarAPI();
     }, [])
     
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    //     console.log(moneda);
+    //     console.log(criptoMonedas);
+        if([moneda,criptoMonedas].includes('')){
+            setError(true);
+            setTimeout(() => {
+                setError(false);
+            }, 3000);
+            return;
+        }
+    }
+
     return (
-        <form>
-            <SelectMonedas />
-            <SelectCriptMonedas />
-            <InputSubmit
-                type="submit"
-                value="Cotizar"
-            />
-        </form>
+        <Fragment>
+            {error && 
+                <Error>Los campos deben de estar llenos</Error>
+            }
+            <form
+                onSubmit={handleSubmit}
+            >
+                <SelectMonedas />
+                <SelectCriptMonedas />
+                <InputSubmit
+                    type="submit"
+                    value="Cotizar"
+                />
+            </form>
+        </Fragment>
     )
 }
 
