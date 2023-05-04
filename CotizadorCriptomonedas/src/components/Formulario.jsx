@@ -24,7 +24,7 @@ const Formulario = () => {
     const [criptos, setCriptos] = useState([]);
 
     const [ moneda, SelectMonedas ] = useSelectMonedas('Elige tu moneda', monedas);
-    const [ criptoMonesas, SelectCriptMonedas ] = useSelectMonedas('asdsfad', criptos);
+    const [ criptoMonesas, SelectCriptMonedas ] = useSelectMonedas('Elige tu criptomoneda', criptos);
 
     useEffect(() => {
         const consultarAPI = async () => {
