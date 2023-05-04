@@ -21,12 +21,12 @@ const InputSubmit = styled.input`
         cursor: pointer; 
     }
 `
-const Formulario = () => {
+const Formulario = ({setMoneda}) => {
     const [criptos, setCriptos] = useState([]);
     const [error, setError] = useState(false);
 
     const [ moneda, SelectMonedas ] = useSelectMonedas('Elige tu moneda', monedas);
-    const [ criptoMonedas, SelectCriptMonedas ] = useSelectMonedas('Elige tu criptomoneda', criptos);
+    const [ criptomoneda, SelectCriptMonedas ] = useSelectMonedas('Elige tu criptomoneda', criptos);
 
     useEffect(() => {
         const consultarAPI = async () => {
@@ -49,14 +49,19 @@ const Formulario = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
     //     console.log(moneda);
-    //     console.log(criptoMonedas);
-        if([moneda,criptoMonedas].includes('')){
+    //     console.log(criptomoneda);
+        if([moneda,criptomoneda].includes('')){
             setError(true);
             setTimeout(() => {
                 setError(false);
             }, 3000);
             return;
         }
+        setMoneda({
+            moneda,
+            criptomoneda,
+        });
+
     }
 
     return (
