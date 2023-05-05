@@ -54,6 +54,7 @@ const Index = () => {
         <Fragment>
             <h1 className="font-black text-4xl text-blue-700">Clientes</h1>
             <p className="mt-3">Administra tus Clientes</p>
+            {/* BOTON PARA IR A CREAR UN NUEVO CLIENTE */}
             <div className='flex justify-end'>
                 <button
                     className='bg-green-500  text-white px-3 py-1 font-bold uppercase text-xs'
