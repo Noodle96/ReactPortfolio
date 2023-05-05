@@ -7,38 +7,38 @@ export function loader(){
     const clientes = [
         {
             id: 1,
-            nombre: 'Juan',
+            nombre: 'Carol',
             telefono: 102013313,
-            email: "juan@nyt.com",
-            empresa: 'No Yellow Team'
+            email: "carol@nyt.com",
+            empresa: 'Analisis Matematico E.R'
         },
         {
             id: 2,
-            nombre: 'Karen',
+            nombre: 'Alicia',
             telefono: 138198313,
-            email: "karen@nyt.com",
-            empresa: 'No Yellow Team'
+            email: "alicia@nyt.com",
+            empresa: 'Analisis real E.R'
         },
         {
             id: 3,
-            nombre: 'Josue',
+            nombre: 'David',
             telefono: 31983913,
-            email: "josue@nyt.com",
-            empresa: 'No Yellow Team'
+            email: "david@nyt.com",
+            empresa: 'Inferencia E.R'
         },
         {
             id: 4,
-            nombre: 'Miguel',
+            nombre: 'Dalia',
             telefono: 319381983,
-            email: "miguelnyt.comm",
-            empresa: 'No Yellow Team'
+            email: "dalia@nyt.com",
+            empresa: 'AlgebraLineal E.R'
         },
         {
             id: 5,
-            nombre: 'Pedro',
+            nombre: 'Jhoel',
             telefono: 1398198938,
-            email: "pedro@nyt.com",
-            empresa: 'No Yellow Team'
+            email: "jhoel@nyt.com",
+            empresa: 'Algebra E.R'
         },
     ];
     return clientes;
