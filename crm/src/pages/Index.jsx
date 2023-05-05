@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import {useLoaderData} from 'react-router-dom';
 import Cliente from '../components/Cliente';
+import {useNavigate} from 'react-router-dom';
 
 export function loader(){
     // console.log('desde loader');
@@ -47,11 +48,22 @@ const Index = () => {
     // This hook save the data of "loader"
     // This hook only exists in react router dom
     const datos = useLoaderData();
+    const navigate = useNavigate();
     // console.log(datos);
     return (
         <Fragment>
             <h1 className="font-black text-4xl text-blue-700">Clientes</h1>
             <p className="mt-3">Administra tus Clientes</p>
+            <div className='flex justify-end'>
+                <button
+                    className='bg-green-500  text-white px-3 py-1 font-bold uppercase text-xs'
+                    onClick={ () => navigate('/clientes/nuevo')}
+                >
+                    Nuevo Cliente
+                </button>
+
+            </div>
+
 
             {datos.length ? (
                 <table className='w-full bg-white shadow mt-5 table-auto'>
