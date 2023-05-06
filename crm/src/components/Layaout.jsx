@@ -2,7 +2,7 @@ import React from 'react'
 import {Outlet, Link, useLocation} from 'react-router-dom';
 const Layaout = () => {
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
     return (
         <div className='md:flex md:min-h-screen'>
             <aside className=' md:w-1/4 bg-red-500  px-5 py-10'>
