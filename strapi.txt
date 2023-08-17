@@ -1,0 +1,5 @@
+1.- Guitarla: Creando una API con strapi CMS con Postgresql
+	      and Cloudinary.
+	npx create-strapi-app@latest my-project
+	edit database.js and run npm i pg --save
+	after nom run develop
