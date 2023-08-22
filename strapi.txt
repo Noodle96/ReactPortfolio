@@ -3,3 +3,11 @@
 	npx create-strapi-app@latest my-project
 	edit database.js and run npm i pg --save
 	after nom run develop
+	
+	install cloudinary to project:
+	npm install @strapi/provider-upload-cloudinary --save
+	then config
+
+2.- Remix (thi will consume strapi API)
+	npx create-remix@latest
+
