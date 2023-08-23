@@ -1,6 +1,8 @@
-import {Link} from '@remix-run/react';
+import {Link, useLocation,} from '@remix-run/react';
 import logo from '../../public/img/logo.svg';
 function Header() {
+	const location = useLocation();
+	// console.log(location);
 	return (
 		<header className='header'>
 			<div className="contenedor barra">
@@ -8,16 +10,16 @@ function Header() {
 					<img src={logo} alt="logotipo guitarla" className='logo'/>
 				</Link>
 				<nav className="navegacion">
-					<Link to="/">
+					<Link to="/" className={location.pathname === '/'? 'active':''}>
 						Inicio
 					</Link>
-					<Link to="nosotros">
+					<Link to="nosotros" className={location.pathname === '/nosotros'? 'active':''}>
 						Nosotros
 					</Link>
-					<Link to="tienda">
+					<Link to="tienda" className={location.pathname === '/tienda'? 'active':''}>
 						Tienda
 					</Link>
-					<Link to="blog">
+					<Link to="blog" className={location.pathname === '/blog'? 'active':''}>
 						Blog
 					</Link>
 				</nav>
