@@ -1,4 +1,29 @@
 import imagen_nosotros from '~/../public/img/nosotros.jpg';
+import styles from '~/styles/nosotros.css';
+
+export function meta() {
+    return (
+        [
+            {title: 'GuitarLA - nosotros'},
+            {description: 'venta de guitarras y mas'}
+		]
+    )
+}
+
+export function links(){
+    return [
+        {
+			rel: 'stylesheet',
+			href: styles,
+		},
+        {
+            rel: 'stylesheet',
+            href: imagen_nosotros,
+            as: 'image',
+        },
+    ];
+}
+
 function Nosotros() {
     return(
         <main className='contenedor nosotros'>
