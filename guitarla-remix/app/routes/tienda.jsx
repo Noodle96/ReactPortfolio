@@ -17,13 +17,13 @@ function Tienda(){
     <main className='contenedor'>
       <h2 className="heading">Nuestra Coleccion</h2>
       {
-        guitarras.length && (
+        guitarras?.length && (
           <div className="guitarras-grid">
             {
               guitarras.map(guitarra => (
                 <Guitarra  
-                  key={guitarra.id}
-                  guitarra={guitarra}
+                  key={guitarra?.id}
+                  guitarra={guitarra?.attributes}
                 />
                 
               ))
