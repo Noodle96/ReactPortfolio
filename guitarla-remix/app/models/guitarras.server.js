@@ -6,3 +6,8 @@ export async function getGuitarras(){
 	// console.log(process.env.API_URL);
 	return resultado;
 }
+
+export async function getGuitarra(url){
+	const respuesta = await fetch(`${process.env.API_URL}/guitarras?filters[url]=${url}&populate=imagen`);
+	return await respuesta.json();
+}
