@@ -21,6 +21,8 @@
     align-items: center;
     max-width: 70rem;
     margin: 0 auto;
+    max-width: 70rem;
+    margin: 0 auto;
 }
 .guitarra .contenido {
     padding: 1rem;
