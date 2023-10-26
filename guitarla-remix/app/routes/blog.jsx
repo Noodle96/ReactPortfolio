@@ -3,6 +3,12 @@ import Post from '~/components/post';
 import {getPosts} from '~/models/posts.server'
 import styles from '~/styles/blog.css';
 
+export function meta(){
+	return [
+		{title: `Guitarla - Nuestro Blog`},
+		{description: `GuitarLa - Blog de musica y venta de guitarras`},
+	];
+}
 export function links(){
 	return [
 		{
@@ -11,7 +17,6 @@ export function links(){
 		}
 	];
 }
-
 
 export async function loader(){
 	const posts =  await getPosts(); 
