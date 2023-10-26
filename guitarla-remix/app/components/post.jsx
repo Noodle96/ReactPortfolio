@@ -10,7 +10,7 @@ export default function Post({post}) {
                 <h3>{titulo}</h3>
                 <p className="fecha">{publishedAt}</p>
                 <p className="resumen">{contenido}</p>
-                <p className="url">{url}</p>
+                {/* <p className="url">{url}</p> */}
                 <Link className="enlace" to={`/posts/${url}`}>Leer Post</Link>
             </div>
         </article>
