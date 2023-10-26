@@ -14,8 +14,9 @@
 	}
 }
 
-.post{
-
+.post .fecha{
+	color: var(--primary);
+	font-size: 1.6rem;
 }
 .post .contenido{
 	padding: 1.5rem;
