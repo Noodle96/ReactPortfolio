@@ -120,3 +120,15 @@ main {
     text-align: center;
    
 }
+
+.error,.error-enlace{
+    font-size: 2.4 rem;
+    text-align: center;
+    margin-top: 5rem;
+}
+.error-enlace{
+    display: block;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 2.5rem;
+}
