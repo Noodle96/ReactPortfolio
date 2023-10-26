@@ -11,15 +11,39 @@ import {
 import styles from '~/styles/index.css';
 import Header from '~/components/header.jsx'
 import Footer from '~/components/footer';
+// export function meta() {
+//     return (
+//         [
+//             {charset: 'utf-8'},
+//             {title: 'GuitarLA - Remix'},
+//             {viewport: "width=device-width,initial-scale=1"}
+// 		]
+//     )
+// }
+
+
 export function meta() {
-    return (
-        [
-            {charset: 'utf-8'},
-            {title: 'GuitarLA - Remix'},
-            {viewport: "width=device-width,initial-scale=1"}
-		]
-    )
+    const error = useRouteError();
+    if (error?.status === 404) {
+        return ([
+            {
+                title: `GuitarLA - 404`,
+            },
+            {
+                description: `Contenido no encontrado`
+            }
+        ])
+    }
+ 
+    return [
+        { charset: "utf-8" },
+        { title: "GuitarLA - Remix" },
+        { name: "viewport", content: "width=device-width,initial-scale=1" },
+        { description: 'Venta de guitarras, blog de música y más!' }
+    ];
 }
+
+
 
 export  function links(){
 	return[
@@ -71,6 +95,7 @@ function Document({children}) {
         </html>
     )
 }
+
 
 /*Manage Errors*/
 

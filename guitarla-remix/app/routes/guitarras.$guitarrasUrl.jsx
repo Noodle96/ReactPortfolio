@@ -1,6 +1,8 @@
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData} from '@remix-run/react';
 import {getGuitarra} from '~/models/guitarras.server';
 import styles from '~/styles/guitarras.css';
+
+
 
 export async function loader({params}){
     //console.log(params); // { guitarrasUrl: 'urlName' }
@@ -8,6 +10,7 @@ export async function loader({params}){
     //console.log(guitarrasUrl); // urlName
     const guitarra = await getGuitarra(guitarrasUrl);
     console.log("Terminal: Desde await getGuitarra() in loader of guitarras$file");
+    console.log(guitarra);
     //console.log(guitarra.data[0].attributes.nombre);
     if(guitarra.data.length === 0){
         console.log("file.$name data vacio");
@@ -20,14 +23,18 @@ export async function loader({params}){
 }
 
 export function meta({data}){
-  if(!data){
-    return [
+  // solo se llama meta cuando data tenga informacion
+  //console.log("desde meta");
+  //console.log(data);
+  // return [];
+  // if(!data || Object.keys(data).length === 0){
+  //   return [
     
-      {title: `Guitarla - guitarra no encontrada`},
-      {description: `Guitarras venta de guitarras - guitarra no encontrada`},
+  //     {title: `Guitarla - guitarra no encontrada`},
+  //     {description: `Guitarras venta de guitarras - guitarra no encontrada`},
     
-  ];
-  }
+  //   ];
+  // }
   //console.log("Desde data");
   //console.log(data.data);
   return [
