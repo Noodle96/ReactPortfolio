@@ -3,10 +3,13 @@ import { useLoaderData } from "@remix-run/react";
 import { Fragment } from "react";
 import { getGuitarras } from "~/models/guitarras.server";
 import { getPosts } from "~/models/posts.server";
+import { getCurso } from "~/models/curso.server";
 import ListadoGuitarras from "~/components/listadoGuitarras";
 import ListadoPosts from "~/components/listadoPosts";
-import stylesGuitarra from '~/styles/guitarras.css'
-import stylePosts from '~/styles/blog.css'
+import Curso from "~/components/curso";
+import stylesGuitarra from '~/styles/guitarras.css';
+import stylePosts from '~/styles/blog.css';
+import stylesCurso from '~/styles/curso.css';
 
 export function links(){
   return[
@@ -17,6 +20,10 @@ export function links(){
     {
       rel: 'stylesheet',
       href: stylePosts,
+    },
+    {
+      rel: 'stylesheet',
+      href: stylesCurso,
     }
   ];
 }
@@ -29,9 +36,10 @@ export async function loader(){
     // console.log(posts);
 
     // best performance
-    const [guitarras,posts] = await Promise.all([
+    const [guitarras,posts,curso] = await Promise.all([
         getGuitarras(),
         getPosts(),
+        getCurso(),
     ]);
     // console.log("Desde loader");
     // console.log(guitarras);
@@ -40,6 +48,7 @@ export async function loader(){
         //guitarras.data, error
         guitarras: guitarras.data,
         posts: posts.data,
+        curso: curso.data,
     };
 }
 
@@ -49,7 +58,7 @@ export function meta(){
 
 
 function Index() {
-    const {guitarras, posts} = useLoaderData();
+    const {guitarras, posts, curso} = useLoaderData();
     // console.log("Desde index");
     // console.log(guitarras);
     // console.log(posts);
@@ -60,6 +69,9 @@ function Index() {
                     guitarras={guitarras}
                 />
             </main>
+            <Curso 
+                curso={curso.attributes}
+            />
             <section className="contenedor">
                 <ListadoPosts
                     posts={posts}

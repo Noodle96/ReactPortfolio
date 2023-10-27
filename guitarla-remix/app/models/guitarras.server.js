@@ -12,6 +12,3 @@ export async function getGuitarra(url){
 	const respuesta = await fetch(`${process.env.API_URL}/guitarras?filters[url]=${url}&populate=imagen`);
 	return await respuesta.json();
 }
-
-// to curso
-// http://localhost:1337/api/curso
