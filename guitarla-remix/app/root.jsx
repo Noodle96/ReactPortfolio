@@ -73,7 +73,14 @@ export  function links(){
 export default function App(){
 	return (
 		<Document>
-			<Outlet />	
+			<Outlet
+				context={
+					{
+						mensajeCarta: "Princess",
+						costElixir: 3,
+					}
+				}
+			/>	
 		</Document>
 	) 
 }
