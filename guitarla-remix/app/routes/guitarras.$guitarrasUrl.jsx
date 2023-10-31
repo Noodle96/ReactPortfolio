@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLoaderData} from '@remix-run/react';
 import {getGuitarra} from '~/models/guitarras.server';
 import styles from '~/styles/guitarras.css';
@@ -56,33 +57,38 @@ export function links(){
 
 
 function GuitarrasUrl() {
-      const guitarra = useLoaderData();
-      console.log("In Console");
-      //console.log(guitarra);
-      console.log(guitarra.data[0].attributes.nombre);
-      const {nombre, descripcion, imagen, precio } = guitarra.data[0].attributes;
-      return (
-          <main className='contenedor guitarra'>
-              <img src={imagen.data.attributes.url} alt={`Imagen de la guitarra ${nombre}`} className="imagen" />
-              <div className="contenido">
-                  <h3>{nombre}</h3>
-                  <p className="texto">{descripcion}</p>
-                  <p className="precio">${precio}</p>
-                  <form className="formulario">
-                      <label htmlFor="cantidad">Cantidad</label>
-                      <select id="cantidad" >
-                          <option value="">-- Selecciones --</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                      </select>
-                      <input type="submit" value="Agregar al carrito" />
-                  </form>
-              </div>
-          </main>
-      )
+    const [cantidad, setCantidad] = useState();
+    const guitarra = useLoaderData();
+    console.log("In Console");
+    //console.log(guitarra);
+    console.log(guitarra.data[0].attributes.nombre);
+    const {nombre, descripcion, imagen, precio } = guitarra.data[0].attributes;
+    return (
+        <main className='contenedor guitarra'>
+            <img src={imagen.data.attributes.url} alt={`Imagen de la guitarra ${nombre}`} className="imagen" />
+            <div className="contenido">
+                <h3>{nombre}</h3>
+                <p className="texto">{descripcion}</p>
+                <p className="precio">${precio}</p>
+                <form className="formulario">
+                    <label htmlFor="cantidad">Cantidad</label>
+                    <select
+                      onChange={ e => setCantidad(+e.target.value)}
+                        // onChange={ e => setCantidad(parseInt(e.target.value))}
+                        id="cantidad"
+                    >
+                        <option value="">-- Selecciones --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="submit" value="Agregar al carrito" />
+                </form>
+            </div>
+        </main>
+    )
 }
 
 export default GuitarrasUrl
