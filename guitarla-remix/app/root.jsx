@@ -75,7 +75,20 @@ export default function App(){
 	const [carrito, setCarrito] = useState([]);
 	const agregarCarrito = guitarra => {
 		// console.log("agregando ...", guitarra);
-		setCarrito([...carrito,guitarra]);
+		//setCarrito([...carrito,guitarra]);
+		if(carrito.some(guitarraState => guitarraState.id === guitarra.id)){
+			// console.log('guitarra existente');
+			const carritoActualizado = carrito.map(guitarraNueva => {
+				if(guitarraNueva.id === guitarra.id){
+					guitarraNueva.cantidad = guitarra.cantidad;
+				}
+				return guitarraNueva;
+			});
+			//añadir al carrito
+			setCarrito(carritoActualizado);
+		}else{
+			setCarrito([...carrito, guitarra]);
+		}
 	}
 	return (
 		<Document>
