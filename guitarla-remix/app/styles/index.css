@@ -61,9 +61,15 @@ main {
 .header .navegacion {
     display: flex;
 	/* flex-direction: row; */
+    align-items: center;
     gap: 2rem;
     margin-top: 5rem;
 }
+
+.header .navegacion img{
+    width: 3rem;
+}
+
 @media (min-width: 768px) {
     .header .navegacion {
         margin-top: 0;
@@ -116,6 +122,10 @@ main {
     text-decoration: none;
     font-weight: 700;
 }
+.footer .navegacion a:last-child{
+    display: none;
+}
+
 .footer .copyright {
     text-align: center;
    
