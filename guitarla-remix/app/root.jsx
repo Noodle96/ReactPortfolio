@@ -11,6 +11,7 @@ import {
 import styles from '~/styles/index.css';
 import Header from '~/components/header.jsx'
 import Footer from '~/components/footer';
+import { useState } from 'react';
 // export function meta() {
 //     return (
 //         [
@@ -71,13 +72,19 @@ export  function links(){
 	];
 }
 export default function App(){
+	const [carrito, setCarrito] = useState([]);
+	const agregarCarrito = guitarra => {
+		// console.log("agregando ...", guitarra);
+		setCarrito([...carrito,guitarra]);
+	}
 	return (
 		<Document>
 			<Outlet
 				context={
 					{
-						mensajeCarta: "Princess",
-						costElixir: 3,
+						//mensajeCarta: "Princess",
+						//costElixir: 3,
+						agregarCarrito
 					}
 				}
 			/>	

@@ -57,8 +57,9 @@ export function links(){
 
 
 function GuitarrasUrl() {
-    const data = useOutletContext();
-    console.log(data);
+    // const data = useOutletContext();
+    // console.log(data);
+    const {agregarCarrito} = useOutletContext();
     const [cantidad, setCantidad] = useState(0);
     const guitarra = useLoaderData();
     console.log("In Console");
@@ -80,6 +81,7 @@ function GuitarrasUrl() {
             cantidad,
         }
         console.log(guitarraObjeto);
+        agregarCarrito(guitarraObjeto);
     }
 
 

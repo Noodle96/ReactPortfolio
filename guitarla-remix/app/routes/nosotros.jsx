@@ -26,8 +26,8 @@ export function links(){
 }
 
 function Nosotros() {
-    const data = useOutletContext();
-    console.log(data);
+    // const data = useOutletContext();
+    // console.log(data);
     return(
         <main className='contenedor nosotros'>
             <h2 className="heading">Nosotros</h2>
