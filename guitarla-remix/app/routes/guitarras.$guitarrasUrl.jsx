@@ -57,12 +57,31 @@ export function links(){
 
 
 function GuitarrasUrl() {
-    const [cantidad, setCantidad] = useState();
+    const [cantidad, setCantidad] = useState(0);
     const guitarra = useLoaderData();
     console.log("In Console");
     //console.log(guitarra);
     console.log(guitarra.data[0].attributes.nombre);
     const {nombre, descripcion, imagen, precio } = guitarra.data[0].attributes;
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if(cantidad < 1){
+            alert("Debe de seleccionar una cantidad positiva");
+            return;
+        }
+        const guitarraObjeto = {
+            id: guitarra.data[0].id,
+            imagen: imagen.data.attributes.url,
+            nombre,
+            precio,
+            cantidad,
+        }
+        console.log(guitarraObjeto);
+    }
+
+
+
     return (
         <main className='contenedor guitarra'>
             <img src={imagen.data.attributes.url} alt={`Imagen de la guitarra ${nombre}`} className="imagen" />
@@ -70,14 +89,14 @@ function GuitarrasUrl() {
                 <h3>{nombre}</h3>
                 <p className="texto">{descripcion}</p>
                 <p className="precio">${precio}</p>
-                <form className="formulario">
+                <form onSubmit={handleSubmit} className="formulario">
                     <label htmlFor="cantidad">Cantidad</label>
                     <select
                       onChange={ e => setCantidad(+e.target.value)}
                         // onChange={ e => setCantidad(parseInt(e.target.value))}
                         id="cantidad"
                     >
-                        <option value="">-- Selecciones --</option>
+                        <option value="0">-- Selecciones --</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
