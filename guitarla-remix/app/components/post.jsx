@@ -3,8 +3,15 @@ import {formatearFecha} from '~/utils/helpers';
 export default function Post({post}) {
     //console.log(post);
     const {titulo, contenido, imagen ,url, publishedAt} = post;
+    // console.log("prueba desde post");
+    // console.log(titulo);
+    // console.log(contenido);
+    // console.log(imagen);
+    // console.log(url);
+    // console.log(publishedAt);
     return (
         <article className="post">
+            {/* <img src={imagen.data.attributes.formats.small.url} alt={`Posts ${titulo}`} className="imagen" /> */}
             <img src={imagen.data.attributes.formats.small.url} alt={`Posts ${titulo}`} className="imagen" />
             <div className="contenido">
                 <h3>{titulo}</h3>
