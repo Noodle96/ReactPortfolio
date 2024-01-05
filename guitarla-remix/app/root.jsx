@@ -97,7 +97,8 @@ export default function App(){
 					{
 						//mensajeCarta: "Princess",
 						//costElixir: 3,
-						agregarCarrito
+						agregarCarrito,
+						carrito
 					}
 				}
 			/>	
