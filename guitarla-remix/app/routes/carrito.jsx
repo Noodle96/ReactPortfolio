@@ -37,8 +37,9 @@ export default function Carrito() {
 								</div>
 								<div>
 									<p className="nombre">{producto.nombre}</p>
-									<p className="precio">Precio: $ <span>{producto.precio}</span></p>
-									<p className="subtotal">Subtotal: $ <span>{producto.precio*producto.cantidad}</span>  </p>
+									<p className="cantidad">Cantidad: {producto.cantidad}</p>
+									<p className="precio">Precio: <span>$ {producto.precio}</span></p>
+									<p className="subtotal">Subtotal: <span>$ {producto.precio*producto.cantidad}</span>  </p>
 								</div>
 							</div>
 						))
