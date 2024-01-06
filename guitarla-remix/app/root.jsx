@@ -90,6 +90,15 @@ export default function App(){
 			setCarrito([...carrito, guitarra]);
 		}
 	}
+	const actualizarCantidadInCarrito = guitarra => {
+		const carritoActualizado = carrito.map(guitarraState => {
+			if(guitarraState.id === guitarra.id){
+				guitarraState.cantidad = guitarra.cantidad;
+			}
+			return guitarraState;
+		})
+		setCarrito(carritoActualizado);
+	}
 	return (
 		<Document>
 			<Outlet
@@ -98,7 +107,8 @@ export default function App(){
 						//mensajeCarta: "Princess",
 						//costElixir: 3,
 						agregarCarrito,
-						carrito
+						carrito,
+						actualizarCantidadInCarrito,
 					}
 				}
 			/>	

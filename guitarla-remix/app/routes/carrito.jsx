@@ -18,7 +18,7 @@ export function links(){
 	];
 }
 export default function Carrito() {
-	const {carrito} = useOutletContext();
+	const {carrito,actualizarCantidadInCarrito} = useOutletContext();
 	// console.log('====================================');
 	// console.log("Desde carrito");
 	console.log(carrito);
@@ -38,7 +38,14 @@ export default function Carrito() {
 								<div>
 									<p className="nombre">{producto.nombre}</p>
 									<p className="cantidad">Cantidad:</p>
-									<select value={producto.cantidad} className="select">
+									<select
+										value={producto.cantidad}
+										className="select"
+										onChange={e => actualizarCantidadInCarrito({
+											cantidad : e.target.value,
+											id: producto.id,
+										})}
+									>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
