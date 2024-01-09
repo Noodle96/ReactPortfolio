@@ -11,7 +11,7 @@ import {
 import styles from '~/styles/index.css';
 import Header from '~/components/header.jsx'
 import Footer from '~/components/footer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // export function meta() {
 //     return (
 //         [
@@ -72,7 +72,17 @@ export  function links(){
 	];
 }
 export default function App(){
-	const [carrito, setCarrito] = useState([]);
+	// Si en caso JSON.parse(localStorage.getItem('carrito'))  sea null entonces asignar a carritoLs un [].
+	const carritoLS = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('carrito')) ?? []:[];
+	const [carrito, setCarrito] = useState(carritoLS);
+	//	locale storage 
+	//outside call localStorage => not defined
+	useEffect(() => {
+		//inside call localStorage => correct
+		// Se ejecuta una sola vez  enla parte del cliente(navegador) de remix
+		localStorage.setItem('carrito', JSON.stringify(carrito))
+	}, [carrito])
+	
 	const agregarCarrito = guitarra => {
 		// console.log("agregando ...", guitarra);
 		//setCarrito([...carrito,guitarra]);
