@@ -28,6 +28,7 @@
 	padding: 3rem 0;
 	/* background-color: aqua; */
 	border-bottom: 1px solid #cfcfcf;
+	position: relative;
 }
 .producto:last-of-type{
 	border-bottom: none;
@@ -58,4 +59,13 @@
 }
 .subtotal{
 	font-size: 2.2rem;
+}
+.btn_eliminar{
+	all:unset;
+	position: absolute;
+	top: 3rem;
+	right: 1rem;
+}
+.btn_eliminar:hover{
+	cursor: pointer;
 }

@@ -21,7 +21,7 @@ export function links(){
 }
 export default function Carrito() {
 	const [total, setTotal] = useState(0);
-	const {carrito,actualizarCantidadInCarrito} = useOutletContext();
+	const {carrito,actualizarCantidadInCarrito,eliminarGuitarra} = useOutletContext();
 	// console.log('====================================');
 	// console.log("Desde carrito");
 	console.log(carrito);
@@ -65,6 +65,13 @@ export default function Carrito() {
 									<p className="precio">Precio: <span>$ {producto.precio}</span></p>
 									<p className="subtotal">Subtotal: <span>$ {producto.precio*producto.cantidad}</span>  </p>
 								</div>
+								<button
+									type='button'
+									className='btn_eliminar'
+									onClick={()=> eliminarGuitarra(producto.id)}
+								>
+									X
+								</button>
 							</div>
 						))
 					)
