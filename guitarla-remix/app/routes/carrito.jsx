@@ -2,6 +2,7 @@
 import styles from '~/styles/carrito.css';
 import { useOutletContext } from '@remix-run/react';
 import { useEffect, useState } from 'react';
+import { ClientOnly } from 'remix-utils/client-only';
 export function meta() {
     return (
         [
